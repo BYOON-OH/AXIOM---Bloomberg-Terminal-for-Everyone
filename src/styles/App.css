@@ -1,0 +1,212 @@
+/* ─── App Shell ─── */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px 0 60px;
+}
+
+/* ─── Hero ─── */
+.hero-section {
+  text-align: center;
+  padding: 48px 0 52px;
+  position: relative;
+}
+
+/* 배경 글로우 효과 */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(240,180,41,.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-section > * { position: relative; z-index: 1; }
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-mid);
+  border-radius: 20px;
+  padding: 5px 16px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--txt-muted);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-green);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent-green);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--txt-primary);
+  letter-spacing: -.03em;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.hero-accent {
+  color: var(--accent-gold);
+  text-shadow: var(--shadow-glow-gold);
+}
+
+.hero-sub {
+  font-size: 15px;
+  color: var(--txt-secondary);
+  max-width: 520px;
+  margin: 0 auto 32px;
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+.hero-hints {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.hint-text {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--txt-dim);
+}
+
+.hint-chip {
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--txt-secondary);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.hint-chip:hover {
+  border-color: var(--accent-gold-dim);
+  color: var(--accent-gold);
+  background: rgba(240,180,41,.05);
+}
+
+/* ─── Tab Nav ─── */
+.tab-nav {
+  display: flex;
+  gap: 2px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-md);
+  padding: 4px;
+  margin-bottom: 32px;
+  overflow-x: auto;
+}
+
+.tab-btn {
+  flex: 1;
+  min-width: fit-content;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 8px 18px;
+  color: var(--txt-muted);
+  font-family: var(--font-body);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.tab-btn:hover { color: var(--txt-primary); background: var(--bg-hover); }
+.tab-btn.active {
+  background: var(--bg-active);
+  color: var(--accent-gold);
+  font-weight: 500;
+}
+
+/* ─── Two Column Layout ─── */
+.two-col-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .two-col-layout { grid-template-columns: 1fr; }
+}
+
+/* ─── Footer ─── */
+.app-footer {
+  background: var(--bg-base);
+  border-top: 1px solid var(--border-dim);
+  padding: 24px 0;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--accent-gold);
+  letter-spacing: .1em;
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--txt-dim);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  transition: color var(--transition);
+}
+.footer-links a:hover { color: var(--txt-secondary); }
+
+.footer-disclaimer {
+  font-size: 11px;
+  color: var(--txt-dim);
+  max-width: 600px;
+  line-height: 1.5;
+}
