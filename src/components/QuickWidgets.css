@@ -1,0 +1,144 @@
+.widgets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 800px) {
+  .widgets-grid { grid-template-columns: 1fr; }
+}
+
+.widget-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  transition: all var(--transition);
+}
+.widget-card:hover {
+  border-color: var(--border-mid);
+}
+
+.widget-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.widget-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.widget-title {
+  font-family: var(--font-display);
+  font-size: 12px;
+  color: var(--txt-secondary);
+  letter-spacing: .04em;
+  flex: 1;
+}
+
+.widget-external {
+  color: var(--txt-dim);
+  font-size: 11px;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.widget-external:hover { color: var(--accent-blue); }
+
+/* ─── Forex ─── */
+.forex-list { display: flex; flex-direction: column; gap: 8px; }
+
+.forex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border-dim);
+}
+.forex-row:last-child { border-bottom: none; }
+
+.forex-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--txt-secondary);
+}
+.forex-rate {
+  font-size: 13px;
+  color: var(--txt-primary);
+  font-weight: 500;
+}
+
+/* ─── Crypto ─── */
+.crypto-list { display: flex; flex-direction: column; gap: 8px; }
+
+.crypto-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.crypto-symbol {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent-gold);
+  font-weight: 500;
+}
+
+.crypto-right { display: flex; align-items: center; gap: 8px; }
+
+.crypto-price {
+  font-size: 13px;
+  color: var(--txt-primary);
+}
+
+.crypto-change {
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+.crypto-change.up   { color: var(--accent-green); }
+.crypto-change.down { color: var(--accent-red); }
+
+/* ─── Risk Radar ─── */
+.radar-list { display: flex; flex-direction: column; gap: 6px; }
+
+.radar-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all var(--transition);
+}
+.radar-item:hover {
+  background: var(--bg-hover);
+  border-color: var(--accent-red);
+}
+
+.radar-left { display: flex; flex-direction: column; gap: 2px; }
+
+.radar-label {
+  font-size: 12px;
+  color: var(--txt-primary);
+}
+.radar-note {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--txt-muted);
+}
+
+.radar-arrow {
+  color: var(--txt-dim);
+  font-size: 12px;
+  transition: color var(--transition);
+}
+.radar-item:hover .radar-arrow { color: var(--accent-red); }
+
+.mono { font-family: var(--font-mono); }
